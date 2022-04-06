@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="add-new/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-content">
+        <h1>Thelewala Information</h1>
+        <form
+          action="/addnewthelewala"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="input-boxes">
+            <div class="input-box">
+              <span class="text">Name</span>
+              <input
+                type="text"
+                name="newThelewala"
+                placeholder="Name of Thelewala"
+              />
+            </div>
+            <div class="input-box">
+              <span class="text">Thelewala Number</span>
+              <input
+                type="number"
+                name="newNumber"
+                placeholder="Number of Thelewala"
+              />
+            </div>
+            <div class="input-box">
+              <span class="text">Area</span>
+              <input type="text" name="areaName" placeholder="Eg. Malad" />
+            </div>
+
+            <div class="input-box">
+              <span class="text">URL for the Location</span>
+              <input
+                type="text"
+                name="newURL"
+                placeholder="URL from Google Maps"
+              />
+            </div>
+            <div class="input-box">
+              <input type="file" name="image" />
+            </div>
+            <div class="submit button">
+              <input type="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <div class="loader-container">
+      <img src="add-new/loader.gif" alt="" />
+    </div> -->
+    <script src="add-new/addnew.js"></script>
+  </body>
+</html>
