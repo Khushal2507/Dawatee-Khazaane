@@ -1,15 +1,16 @@
+// import {getData} from "./public/final/realtime.js"
+
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
 
+const swiperWrapper = document.querySelector("swiper-wrapper");
 const leftButton = document.querySelector(".left-btn")
 const rightButton = document.querySelector(".right-btn")
 const imgContent = document.querySelector(".home-img");
+const heartBtn = document.querySelector(".heart-btn")
+
 var img = 1;
-// console.log(leftButton);
-// leftButton.addEventListener("onclick",function(){
-//     console.log("img"+img+".avif");
-//     imgContent.setAttribute(src,"images/image"+img+".png");
-// })
+
 document.querySelector(".left-btn").onclick = function(){
     // console.log("images/image"+img+".png");
     if(img == 3){
@@ -28,6 +29,11 @@ document.querySelector(".right-btn").onclick = function(){
         img--;
     imgContent.setAttribute("src","final/images/image"+img+".png")
 }
+
+
+// document.querySelector(".heart-btn").onclick = function(){
+//   console.log(swiperWrapper);
+// }
 
 menu.onclick = () =>{
   menu.classList.toggle('fa-times');
@@ -60,9 +66,9 @@ window.onscroll = () =>{
 
 }
 
-document.querySelector('#search-icon').onclick = () =>{
-  document.querySelector('#search-form').classList.toggle('active');
-}
+// document.querySelector('#search-icon').onclick = () =>{
+//   document.querySelector('#search-form').classList.toggle('active');
+// }
 
 document.querySelector('#close').onclick = () =>{
   document.querySelector('#search-form').classList.remove('active');
@@ -111,7 +117,7 @@ function loader(){
 }
 
 function fadeOut(){
-  setInterval(loader, 3000);
+  setInterval(loader, 2000);
 }
 
 window.onload = fadeOut;

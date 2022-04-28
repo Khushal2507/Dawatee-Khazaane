@@ -56,13 +56,36 @@ section:nth-child(even){
     border-radius: .5rem;
     cursor: pointer;
     padding:.8rem 3rem;
+    margin-left: 10px;
 }
 
 .btn:hover{
     background: var(--green);
     letter-spacing: .1rem;
 }
+.flex-horizontal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-horizontal .flex-inside{
+    display: flex;
 
+}
+.flex-horizontal .inside button:hover{
+    color: #27ae60;
+    cursor: pointer;
+}
+.flex-horizontal-space{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-horizontal-space form button:hover{
+    color: #27ae60;
+    cursor: pointer;
+}
 header{
     position: fixed;
     top:0; left: 0; right:0;
@@ -102,7 +125,7 @@ header .icons{
     flex-direction: row;
 }
 header .icons i,
-header .icons a,
+header .icons a,    
 header .icons input{
     cursor: pointer;
     margin-left: .5rem;
@@ -145,6 +168,31 @@ header .icons #menu-bars{
 
 #search-form.active{
     top:0;
+}
+
+.right-part .search{
+    padding-right: 20px;
+    
+}
+.right-part .search input{
+    width: 200px;
+    padding-right: 20px;
+    font-size: 1.5rem ;
+    font-weight: 500;
+}
+
+.right-part .search input:focus{
+    border-bottom: #27ae60 2px solid;
+}
+
+.right-part .search button{
+    font-size: 2rem;
+    background: none;
+    cursor: pointer;
+
+}
+.right-part .search button:hover{
+    transform:rotate(360deg);
 }
 
 #search-form #search-box{
@@ -215,6 +263,11 @@ header .icons #menu-bars{
     align-items: center;
 }
 
+header .right-part{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .home .home-slider .slide .image img{
     width: 600px;
     height: 600px;
