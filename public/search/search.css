@@ -38,12 +38,17 @@ section{
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap:1.5rem;
 }
+.flex-horizontal{
+    display: flex;
+    justify-content: flex-start;
+}
 
 .menu .box-container .box{
     background: #fff;
     border:.1rem solid rgba(0,0,0,.2);
     border-radius: .5rem;
     box-shadow: var(--box-shadow);    
+    
 }
 
 .menu .box-container .box .image{

@@ -8,9 +8,10 @@ import _ from "lodash"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc, getDoc, getDocs, query,doc,updateDoc } from "firebase/firestore"; 
 import { async } from '@firebase/util'
-import {read, searchData, updateData, readReviews} from "./config.js"
+import {read, searchData, updateData, readReviews,checkThelewala} from "./config.js"
 import { writeUserData, reviewsDatabase } from './realtime.js'
 import {getData} from "./realtime.js"
+import { log } from 'console'
 const app = express();  
 let dataThelewala = ["hello","hi"]
 let realData = []
@@ -161,18 +162,32 @@ app.post("/:newUser",upload.single("image"),async (req, res) => {
         thele_star = req.body.starAns
         thele_image = req.body.imageURL
         console.log(auth.currentUser.email);
-       addDoc(collection(db, "users"), {
-                  name: thele_name,
-                  number: thele_num,
-                  area: thele_area,
-                  image: thele_image,
-                  url: thele_url,
-                  likes:0,
-                  reviews : thele_reviews,
-                  category : thele_category,
-                  user:auth.currentUser.email,
-                  star:thele_star
-                });
+
+        var check = await checkThelewala(thele_num);
+        console.log(check);
+        if(!check)
+        {
+            res.sendFile(__dirname + "/check.html")
+            console.log("Existing");
+        }
+        else{
+            console.log("Inserted");
+            addDoc(collection(db, "users"), {
+                name: thele_name,
+                number: thele_num,
+                area: thele_area,
+                image: thele_image,
+                url: thele_url,
+                likes:0,
+                reviews : thele_reviews,
+                category : thele_category,
+                user:auth.currentUser.email,
+                star:thele_star
+              });
+              res.redirect("/home")
+        }
+
+       
         // await writeUserData(userName, thele_name,thele_num,thele_area,thele_url,thele_reviews,thele_category,thele_star)
         //     console.log("Document Added");
 
@@ -184,7 +199,7 @@ app.post("/:newUser",upload.single("image"),async (req, res) => {
             //     }
                 
             //  }
-            res.redirect("/home")
+            
        
     }
     else if(redirect == "Search"){

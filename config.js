@@ -48,6 +48,15 @@ const firebaseConfig = {
       return querySnapshot.docs.map((obj)=>{return obj.data()});
     }
 
+    export async function checkThelewala(thelewalaNumber){
+      const q = query(collection(db, "users"), where("number", "==", thelewalaNumber));
+      const querySnapshot = await getDocs(q);
+      console.log(querySnapshot.docs); 
+      if(querySnapshot.docs.length==0)
+        return 1
+      else
+        return 0
+    }
     export async function updateData(thelewalaNumber){
       const q = query(collection(db, "users"), where("number", "==", thelewalaNumber));
       const querySnapshot = await getDocs(q);
