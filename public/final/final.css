@@ -674,6 +674,11 @@ header .right-part{
     opacity:0;
 }
 
+.about .row img{
+    border-radius: 90%;
+    /* height: ; */
+    width: 200px;
+}
 
 
 

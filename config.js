@@ -9,14 +9,15 @@ import { Database } from 'firebase/database';
 // import {getDatabase
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCmJkzz3OjjRsu3pPX8DoC232QhSuHYCvQ",
-    authDomain: "dawatee-khazanee.firebaseapp.com",
-    projectId: "dawatee-khazanee",
-    storageBucket: "dawatee-khazanee.appspot.com",
-    messagingSenderId: "896486057906",
-    appId: "1:896486057906:web:c444e5441b19da524b26ab",
-    measurementId: "G-TSQEEHX8G0"
-  };
+  apiKey: "AIzaSyCmJkzz3OjjRsu3pPX8DoC232QhSuHYCvQ",
+  authDomain: "dawatee-khazanee.firebaseapp.com",
+  databaseURL: "https://dawatee-khazanee-default-rtdb.firebaseio.com",
+  projectId: "dawatee-khazanee",
+  storageBucket: "dawatee-khazanee.appspot.com",
+  messagingSenderId: "896486057906",
+  appId: "1:896486057906:web:c444e5441b19da524b26ab",
+  measurementId: "G-TSQEEHX8G0"
+};
 
 
   export const FirebaseApp = initializeApp(firebaseConfig)
