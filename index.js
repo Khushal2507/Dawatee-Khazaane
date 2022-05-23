@@ -60,7 +60,7 @@ const newEmailLogin = (email, password) => {
 
 async function retrieveData (){
     dataThelewala = await read();
-    realData = await getData();
+    // realData = await getData();
     reviewsData = await readReviews();
     // console.log(reviewsData);
     // const json = JSON.parse(realData)

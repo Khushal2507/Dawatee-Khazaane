@@ -11,7 +11,7 @@ import { Database } from 'firebase/database';
 const firebaseConfig = {
   apiKey: "AIzaSyCmJkzz3OjjRsu3pPX8DoC232QhSuHYCvQ",
   authDomain: "dawatee-khazanee.firebaseapp.com",
-  databaseURL: "https://dawatee-khazanee-default-rtdb.firebaseio.com",
+  // databaseURL: "https://dawatee-khazanee-default-rtdb.firebaseio.com",
   projectId: "dawatee-khazanee",
   storageBucket: "dawatee-khazanee.appspot.com",
   messagingSenderId: "896486057906",
